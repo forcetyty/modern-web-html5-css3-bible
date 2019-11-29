@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 Selector Basic</title>
+        <style>
+            /* 
+                table 태그 아래의 tr 태그 아래 th 태그의 color 속성에 red 키워드를 적용
+            */
+            table > tr > th {
+                color : red;
+            }
+            #header > h1 {color : red;}
+        </style>
+    </head>
+    <body>
+       <table border="1">
+            <tr>
+                <th>Name</th> 
+                <th>Region</th> 
+            </tr>
+            <tr>
+                <th>안태영</th> 
+                <th>서울시</th> 
+            </tr>
+       </table>
+    </body>
+</html>
