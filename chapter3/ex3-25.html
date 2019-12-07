@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 Selector Basic</title>
+        <style>
+            /* input 태그의 type 속성값이 checkbox인 태그가 체크되었을 때
+               바로 뒤에 위치하는 div 태그의 height 속성에 0 픽셀을 적용합니다. */
+               input[type=checkbox]:checked + div{
+                   height: 0px;
+               }
+
+               div{
+                   overflow: hidden;
+                   width: 650px; height: 300px;
+
+                   /* 변환 효과를 적용합니다. */
+                   -ms-transition-duration : 1s;
+                   -webkit-transition-duration: 1s;
+                   -moz-transition-duration: 1s;
+                   transition-duration: 1s;
+               }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox">
+        <div>
+            <h1>Lorem inpsum</h1>
+            <p>Lorem inpsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </body>
+</html>
