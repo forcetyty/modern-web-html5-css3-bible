@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chapter 6</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <!-- 초기화 -->
+        <style>
+            * { margin: 0; padding: 0;}
+            body { font-family: 'He;vetoca', sans-serif;}
+            li { list-style: none;}
+            a { text-decoration: none;}
+        </style>
+
+        <!-- 헤더 -->
+        <style>
+            #main_header {
+                /* 배경 지정 */
+                height: 45px;
+                background: url('header_background.png');
+
+                /* 자손 위치 지정 */
+                position: relative;
+                text-align: center;
+                line-height: 45px;
+            }
+
+            #main_header > h1 {
+                color : white;
+            }
+
+            #main_header > a, #main_header > label {
+                display: block;
+                height: 32px;
+                position: absolute;
+            }
+
+            #main_header > a.left{
+                width: 65px;
+                left: 5px; top: 7px;
+            }
+
+            #main_header > label.right {
+                width: 32px;
+                right: 5px; top: 7px;
+            }
+        </style>
+
+        <!-- 스프라이트 이미지 -->
+        <style>
+            #main_header > a.left {
+                background: url('sprites.png');
+                background-position: 0px 0px;
+                text-indent: -99999px;
+            }
+
+            #main_header > label.right {
+                background: url('sprites.png');
+                background-position: -62px 0px;
+                text-indent: -99999px;
+            }
+        </style>
+
+        <!-- 토글 목록 -->
+        <style></style>
+
+        <!-- 네비게이션(1) -->
+        <style></style>
+
+        <!-- 네비게이션(2) -->
+        <style></style>
+
+        <!-- 본문 -->
+        <style></style>
+
+        <!-- 푸터 -->
+        <style></style>
+    </head>
+    <body>
+        <input id="toggle" type="checkbox" />
+        <div id="wrap">
+            <header id="main_header"> 
+                <a class="left" href="#">Main</a>
+                <h1>Mobile</h1>
+                <label class="right" for="toggle">toggle</label>
+                <div id="toggle_gnb_wrap">
+                    <div id="toggle_gnb">
+
+                    </div>
+                </div>
+            </header> 
+        </div>
+    </body>
+</html>
