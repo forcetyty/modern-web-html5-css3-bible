@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chapter 7</title>
+    <meta name='viewport' content="width=device-width, initial-scale=1.0" />
+
+    <!-- 초기화 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            min-width: 760px;
+            font-family: 'Helvetica', sans-serif;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+    <!-- 헤더 -->
+    <style>
+        #main_header {
+            height: 60px;
+            line-height: 60px;
+            padding-left: 10px;
+            border-bottom: 1px solid black;
+            background: #1D4088;
+            color: white;
+        }
+    </style>
+
+    <!-- 내비게이션 -->
+    <style>
+        #main_gnb {
+            overflow: hidden;
+            border-bottom: 1px solid black;
+            background: #32394A;
+        }
+        
+        #main_gnb>ul.left {
+            overflow: hidden;
+            float: left;
+        }
+        
+        #main_gnb>ul.right {
+            overflow: hidden;
+            float: right;
+        }
+        
+        #main_gnb>ul.left>li {
+            float: left;
+        }
+        
+        #main_gnb>ul.right>li {
+            float: right;
+        }
+        /* a 태그 설정 */
+        
+        #main_gnb a {
+            /* 레이아웃 설정 */
+            display: block;
+            padding: 10px 20px;
+            /* 색상 설정 */
+            border-left: 1px solid #5F6673;
+            border-right: 1px solid #242A37;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- 콘텐츠 -->
+    <style>
+        #wrap {
+            overflow: hidden;
+        }
+        
+        #wrap>#main_lnb {
+            float: left;
+            width: 200px;
+        }
+        
+        #wrap>#content_wrap {
+            float: left;
+            width: 100%;
+            margin-right: -200px;
+        }
+        
+        #wrap>#content_wrap>#content {
+            padding-right: 200px;
+        }
+    </style>
+
+    <!-- 수직목록 -->
+    <style></style>
+
+    <!-- 푸터 -->
+    <style></style>
+</head>
+
+<body>
+    <header id="main_header">
+        <h1>Fluid</h1>
+    </header>
+
+    <nav id="main_gnb">
+        <ul class="left">
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+        </ul>
+    </nav>
+
+    <div id="wrap">
+        <nav id="main_lnb">
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+        </nav>
+
+        <div id="content_wrap">
+            <div id="content">
+                <article>
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article>
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article>
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
