@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS3 Transfrom Basic</title>
+    <style>
+        body {
+            width: 200px;
+            margin: 200px auto;
+        }
+        
+        section {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.3;
+        }
+        /* 옆면 */
+        
+        div:nth-child(1) {
+            transform: rotateY(0deg) translate3d(0px, 0px, 100px);
+        }
+        
+        div:nth-child(2) {
+            transform: rotateY(90deg) translate3d(0px, 0px, 100px);
+        }
+        
+        div:nth-child(3) {
+            transform: rotateY(180deg) translate3d(0px, 0px, 100px);
+        }
+        
+        div:nth-child(4) {
+            transform: rotateY(270deg) translate3d(0px, 0px, 100px);
+        }
+        /* 윗면과 아랫면 */
+        
+        div:nth-child(5) {
+            transform: rotateX(90deg) translate3d(0px, 0px, 100px);
+        }
+        
+        div:nth-child(6) {
+            transform: rotateX(270deg) translate3d(0px, 0px, 100px);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>
