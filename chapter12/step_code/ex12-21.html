@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS3 Grid System</title>
+    <style>
+        * {
+            /* 기본 초기화 */
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            /* 너비 고정 and 중앙 정렬*/
+            width: 960px;
+            margin: 0 auto;
+            /* 그리드 구성하기 */
+            display: grid;
+            grid-template: 70px 1fr 70px / 200px 1fr;
+            grid-gap: 5px;
+            grid-template-areas: 'header header' 'asied content' 'footer footer';
+        }
+        
+        [class*=cell] {
+            box-sizing: border-box;
+            border: 5px solid black;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .cell-header {
+            grid-area: header;
+        }
+        
+        .cell-aside {
+            grid-area: aside;
+        }
+        
+        .cell-content {
+            grid-area: content;
+        }
+        
+        .cell-footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cell-header">
+            <h1>Header</h1>
+        </div>
+        <div class="cell-aide">
+            <h2>Aside</h2>
+            <p>Hello Html Wordl</p>
+            <p>CSS3 Wordl</p>
+        </div>
+        <div class="cell-content">
+            <h1>Programming world is Basic</h1>
+            <p>Hello Html World</p>
+            <p>my skill Java Jsp Spring</p>
+        </div>
+        <div class="cell-footer">
+            <h1>Footer</h1>
+        </div>
+    </div>
+</body>
+
+</html>

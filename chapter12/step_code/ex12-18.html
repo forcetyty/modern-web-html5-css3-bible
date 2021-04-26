@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS3 Grid System</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template: 200px 200px 200px / 200px 200px 200px;
+            grid-gap: 10px;
+        }
+        
+        [class*=cell] {
+            box-sizing: border-box;
+            border: 5px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .cell-a {
+            grid-row-start: 1;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cell-a">cell a</div>
+        <div class="cell-b">cell b</div>
+        <div class="cell-c">cell c</div>
+        <div class="cell-d">cell d</div>
+    </div>
+</body>
+
+</html>
