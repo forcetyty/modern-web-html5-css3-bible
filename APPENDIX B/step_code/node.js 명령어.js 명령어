@@ -1,0 +1,17 @@
+-- node.js 명령어
+
+-> 정적 파일 변환
+
+> npm install -g less
+
+> lessc LessStyleSheet.less > StyleSheet.css
+
+> lessc -x LessStyleSheet.less > StyleSheet.css
+
+
+-> 동적 파일 변환
+
+> npm install less
+
+
+

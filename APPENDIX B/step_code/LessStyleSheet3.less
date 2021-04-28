@@ -1,0 +1,58 @@
+
+header{
+    width: 800px;
+    margin: 0 auto;
+
+    hgroup{
+        h1{
+            color: red;
+        }
+
+        h2 {
+            color: blue;
+        }
+    }
+
+    nav {
+        ul {
+            overflow:  hidden;
+        }
+
+        li{
+            float: left;
+        }
+    }
+}
+
+@color : #ff0000;
+@hue: hue(@color);
+@saturation : saturation(@color);
+@lightness : lightness(@color);
+
+div{ height: 5px;}
+
+div:nth-child(1) { background: hsl(@hue, @saturation, @lightness); }
+div:nth-child(2) { background: hsl(@hue + 10, @saturation, @lightness); }
+div:nth-child(3) { background: hsl(@hue + 20 , @saturation, @lightness); }
+div:nth-child(4) { background: hsl(@hue + 30, @saturation, @lightness); }
+div:nth-child(5) { background: hsl(@hue + 40, @saturation, @lightness); }
+div:nth-child(6) { background: hsl(@hue + 50, @saturation, @lightness); }
+div:nth-child(7) { background: hsl(@hue + 60, @saturation, @lightness); }
+div:nth-child(8) { background: hsl(@hue + 70, @saturation, @lightness); }
+div:nth-child(9) { background: hsl(@hue + 80, @saturation, @lightness); }
+div:nth-child(10) { background: hsl(@hue + 90, @saturation, @lightness); }
+div:nth-child(11) { background: hsl(@hue + 100, @saturation, @lightness); }
+div:nth-child(12) { background: hsl(@hue + 110, @saturation, @lightness); }
+div:nth-child(13) { background: hsl(@hue + 120, @saturation, @lightness); }
+div:nth-child(14) { background: hsl(@hue + 130, @saturation, @lightness); }
+div:nth-child(15) { background: hsl(@hue + 140, @saturation, @lightness); }
+div:nth-child(16) { background: hsl(@hue + 150, @saturation, @lightness); }
+//
+// 한줄 주석 도 가능
+//
+div:nth-child(17) { background: hsl(@hue + 160, @saturation, @lightness); }
+div:nth-child(18) { background: hsl(@hue + 170, @saturation, @lightness); }
+div:nth-child(19) { background: hsl(@hue + 180, @saturation, @lightness); }
+div:nth-child(20) { background: hsl(@hue + 190, @saturation, @lightness); }
+div:nth-child(21) { background: hsl(@hue + 200, @saturation, @lightness); }
+div:nth-child(22) { background: hsl(@hue + 210, @saturation, @lightness); }
