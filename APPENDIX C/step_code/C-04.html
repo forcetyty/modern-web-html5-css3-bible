@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>3D Image Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            background: #141414;
+        }
+        
+        .image {
+            /* 태그 중앙 정렬 */
+            width: 100px;
+            height: 60px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* 모양 지정 */
+            border: 3px solid white;
+            box-sizing: border-box;
+            background: url('http://placehold.it/100x60');
+            background-size: 100% 100%;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+    </script>
+</head>
+
+<body>
+    <div id="viewport">
+        <div id="image_gallery">
+
+        </div>
+    </div>
+</body>
+
+</html>

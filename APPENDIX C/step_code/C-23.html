@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Roman Holiday</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#main_navigation a').click(function() {
+                // 내비게이션 버튼
+                $('#main_navigation a').click(function() {
+                    // 변수를 선언합니다.
+                    var target = $(this).attr('data-target');
+
+                    //클래스를 적용합니다.
+                    $(':not([data-name=' + target + '])').removeClass('active');
+                    $('[data-name=' + target + ']').addClass('active');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <hgroup id="title">
+        <h1 data-name="information">Information</h1>
+        <h1 data-name="character">Character</h1>
+        <h1 data-name="multimedia">Multimedia</h1>
+    </hgroup>
+    <section id="container">
+        <!-- 메인 페이지 -->
+        <div id="main" data-name="main" class="active">
+            <img src="Images/Middle_Foreground.png" />
+        </div>
+
+        <!-- 정보 페이지 -->
+        <div id="information" data-name="information">
+            <img src="Images/Information_Image.png" />
+            <div class="description">
+                <p> Hello HTML5 World</p>
+                <p> My code is Hello HTML5 & SPRING</p>
+            </div>
+        </div>
+
+        <!-- 캐릭터 페이지 -->
+        <div id="character" data-name="character">
+        </div>
+
+        <!-- 영상 페이지 -->
+        <div id="multimedia" data-name="multimedia">
+            <video width="940" height="480" controls="controls"></video>
+        </div>
+    </section>
+    <nav id="main_navigation">
+        <ul>
+            <li><a href="#" data-target="information">Movie Info</a></li>
+            <li><a href="#" data-target="character">Multimedia</a></li>
+            <li><a href="#" data-target="multimedia">Character</a></li>
+            <li><a href="#">Download</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>

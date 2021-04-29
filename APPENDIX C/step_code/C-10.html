@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>3D Image Gallery</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            background: #141414;
+        }
+        
+        .image {
+            /* 태그 중앙 정렬 */
+            width: 100px;
+            height: 60px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* 모양 지정 */
+            border: 3px solid white;
+            box-sizing: border-box;
+            background: url('http://placehold.it/100x60');
+            background-size: 100% 100%;
+        }
+        
+        #viewport {
+            transform-style: preserve-3d;
+            webkit-perspective: 2000px;
+            position: relative;
+            height: 100%;
+            transform: rotateX(-10deg);
+        }
+        
+        #image_gallery {
+            width: 100px;
+            height: 60px;
+            transform-style: preserve-3d;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -50px;
+            margin-top: -30px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // div 태그를 생성합니다.
+            for (var i = 0; i < 200; i++) {
+                // 변수를 선언합니다.
+                var output = '';
+                output += 'rotateY(' + i * 20 + 'deg)';
+                output += 'translateY(' + i * 5 + 'px)';
+                output += 'translateZ(' + 310 + 'px)';
+
+                var isMouseDone = false;
+                var originalPosition = {
+                    x: 0,
+                    y: 0
+                };
+                var originalRotation = {
+                    x: 0,
+                    y: 0,
+                    z: 0
+                };
+                var originalScale = 1.0;
+
+                var createGalleryPosition = function() {
+                    var output = '';
+                    output += 'translateY(' + originalPosition.y + 'px) ';
+                    output += 'rotateY(' + originalRotation.y + 'deg) ';
+                    return output;
+                };
+
+                var createViewportPosition = function() {
+                    var output = '';
+                    output += 'rotateX(-10deg)';
+                    output += 'scaleX(' + originalScale + ') ';
+                    output += 'scaleY(' + originalScale + ') ';
+                    return output;
+                };
+
+                // 태그를 생성합니다.
+                $('<div></div>').addClass('image').css({
+                    'width': 100,
+                    'height': 60,
+                    'transform': output
+                }).appendTo('#image_gallery');
+
+            }
+
+            // 이벤트를 연결합니다.
+            $(window).on({
+                mousedown: function(event) {
+                    // 마우스가 드래그 중임을 알립니다.
+                    isMouseDown = true;
+
+                    // 마우스 위치를 저장합니다.
+                    originalPosition.x = event.screenX;
+
+                    // 디폴트 이벤트를 제거합니다.
+                    event.preventDefault();
+                },
+                mouseup: function(event) {
+                    // 마우스 드래그를 해제합니다.
+                    isMouseDown = false;
+
+                    // 디폴트 이벤트를 제거합니다.
+                    event.preventDefault();
+                },
+                mousemove: function(event) {
+                    // 디폴트 이벤트를 제거합니다.
+                    event.preventDefault();
+                },
+                mousewheel: function(event) {
+                    // 디폴트 이벤트를 제거합니다.
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="viewport">
+        <div id="image_gallery">
+
+        </div>
+    </div>
+</body>
+
+</html>
