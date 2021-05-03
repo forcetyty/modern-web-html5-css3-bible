@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SVG Map With Rapael</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="ElectionMapData.js"></script>
+    <script src="election_result.js"></script>
+    <script src="raphael-min.js"></script>
+    <script>
+        var PARTY_COLOR = {
+            "100": {
+                normal: "#d1e7a4",
+                fill1: "#b9d87b",
+                fill2: "#a5cb5a"
+            }
+            "200": {
+                normal: "#ffc3be",
+                fill1: "#fba19a",
+                fill2: "#f9847c"
+            }
+            "300": {
+                normal: "#e0c1f8",
+                fill1: "#cea0fa",
+                fill2: "#bc80e9"
+            }
+            "550": {
+                normal: "#bdcbf5",
+                fill1: "#718cdb",
+                fill2: "#4b6bc5"
+            }
+            "9999": {
+                normal: "#bec2cc",
+                fill1: "#a9aeb8",
+                fill2: "#9fa4af"
+            }
+        }
+
+        $(document).ready(function() {
+            // 변수 생성
+            var vanvas = document.getElementById('map_image');
+            var paper = Raphael(canvas, 500, 800);
+
+            //지도 생성
+            $.each(electionMapPathData, function(index, item) {
+                // 선 생성
+                var path = paper.path(item['path']);
+
+                // 기본 색상 적용
+                path.attr('fill', '#E0E0E0');
+                path.attr('stroke', '#FFFFFF');
+
+                // id 속성 사용
+                path.id = item['sgcode'];
+            });
+
+            // 색상을 지정합니다.
+            var array = electionResult.gElectionRealtimeCountNationalCandidateList;
+            $.each(array, function(index, item) {
+                // 변수를 선언합니다.
+                var path = paper.getById(item.cpElectionDsitrictId);
+                var color = PARTY.COLOR[item.cpPartyId];
+
+                // 기본 색상 적용
+                path.attr('fill', color.narmal);
+                path.attr('stroke', '#FFFFFF');
+
+                // 이벤트 색상 적용
+                path.hover(function() {
+                    path.attr('fill', color.fill2);
+                }, function() {
+                    path.attr('fill', color.fill1);
+
+                    // 서서히 사라지는 효과를 부여
+                    setTimeout(function() {
+                        path.attr('fill', color.narmal);
+                    }, 100);
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="map_image"></div>
+</body>
+
+</html>
